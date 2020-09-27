@@ -449,7 +449,7 @@ aside h2
 	min-height: 100%;
 }
 
-#activity_tiles
+#activities_tiles
 {
 	display: grid;
 	grid-template-columns: repeat(4, 20.833vw);
