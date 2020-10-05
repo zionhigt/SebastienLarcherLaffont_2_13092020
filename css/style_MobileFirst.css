@@ -1,3 +1,4 @@
+
 #__bs_notify__
 {
 	display: none!important;
@@ -546,7 +547,7 @@ footer ul li span
 		/*width: 333px;
 		height: 144px;*/
 		/*height: 10rem;*/
-		margin-bottom: 2rem;
+		margin:0 2rem  2rem 0;
 	}
 	
 	#home_tiles
@@ -587,6 +588,7 @@ footer ul li span
 	nav
 	{
 		width:100%;
+		justify-content: start;
 	}
 	nav *
 	{
@@ -635,6 +637,16 @@ footer ul li span
 	#home
 	{
 		justify-content: center;
+		max-width: 63%;
+	}
+	#home_tiles
+	{
+		padding: 0;
+	}
+	#home_tiles .tile
+	{
+		max-width: 240px;
+		max-height: 200px;
 	}
 }
 
