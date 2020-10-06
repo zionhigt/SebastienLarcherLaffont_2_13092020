@@ -75,8 +75,9 @@
 }
 body
 {
-	position: absolute;
-	
+	position: relative;
+	left: 0;
+	top: 0;
 	margin: 0;
 	padding: 0;
 	font-family: Raleway, sans-serif;
@@ -86,7 +87,7 @@ body
 
 #main_wrapper, body, footer
 {
-	width: 100%;
+	max-width: 100%;
 }
 #search_bar,
 #filters,
@@ -127,7 +128,7 @@ nav #subscribe
 }
 nav #subscribe a 
 {
-	margin-right: 20px;
+	/*margin-right: 8%;*/
 	color: #0065fc;
 }
 .nav_links a
@@ -142,16 +143,21 @@ nav #subscribe a
 	color: #0065fc;
 	border-bottom: 2px solid #0065fc;
 }
+nav #logo
+{
+
+	text-align: justify;
+}
 nav #logo img
 {
 	width: 8.125rem;
-	text-align: left;
-	margin-left: 3.972%;
+	margin-left: 1.5rem;
 }
 
 #search_set
 {
 	width: auto;
+	max-width: 420px;
 	display: flex;
 	justify-content: center;
 }
@@ -220,7 +226,7 @@ label
 	width: auto;
 	height: 3em;
 	padding-right: 1rem;
-	margin:auto 0.5rem 1rem 0;
+	margin:auto 1rem 1rem 0;
 	border-radius: 2rem;
 }
 
@@ -296,7 +302,7 @@ p.text_filter
 #famous
 {
 	background-color: #f2f2f2;
-	padding-bottom: 2rem!important;
+	/*padding-bottom: 2rem!important;*/
 }
 
 #famous, #home
@@ -305,23 +311,24 @@ p.text_filter
 }
 #famous h2, #home h2, #activities h2
 {
-	padding: 2.5rem 0 1.5rem 0;
+	padding: 2.5rem 1.5rem 1.5rem 0;
 }
 
 #famous h2
 {
 	background: no-repeat 
-				content-box 
-				right 
-				center/1.5rem 
-				url("../data/images/ico/chart-line-solid.svg");
+	content-box 
+	right 
+	center/1.5rem 
+	url("../data/images/ico/chart-line-solid.svg");
 }
 
 #famous .tile
 {
 	position: relative;
-	max-width: 333px;
-	height: 144px;
+	max-width: auto;
+	height: 38.84vw;
+	max-height: 200px;
 	background-color: #fff;
 	margin-bottom: 0.75em;
 	margin-left: auto;
@@ -352,7 +359,7 @@ p.text_filter
 {
 	position: relative;
 	margin: 0 auto 0.75em auto;
-	width: 333px;
+	max-width: 333px;
 	height: 198px;
 
 }
@@ -381,6 +388,7 @@ p.text_filter
 p.more 
 {
 	padding: 1.25rem 0;
+	margin: 3rem auto auto 3.972%;
 }
 p.more a
 {
@@ -460,36 +468,10 @@ footer ul li span
 	}
 }
 
-@media all and (min-width:425px) /*Mobile L devices*/
-{
-	#famous_tiles, #home_tiles, #activities
-	{
-		padding: 1rem;
-	}
-}
 
 
-@media all and (min-width: 768px)
+@media all and (min-width: 450px)
 {
-	nav
-	{
-		flex-wrap: nowrap;
-		align-items: center;
-	}
-	nav  p a, .nav_links a
-	{
-		padding: 0;
-	}
-	nav p, .nav_links
-	{
-		align-self: center;
-	}
-	nav #subscribe
-	{
-		margin: 1.125rem 0;
-		order: 4;
-		text-align: center;
-	}
 	
 	#search_set button
 	{
@@ -506,7 +488,8 @@ footer ul li span
 	#search_set button p
 	{
 		display: inline;
-		padding: 1rem;
+		padding: 0 0.75rem;
+		font-size: 1.125rem;
 		color: white;
 		font-weight: bold;
 	}
@@ -538,14 +521,16 @@ footer ul li span
 		display: flex;
 		flex-flow:row nowrap;
 		justify-content: center;
-		width: 120%;
+		width: 1200px;
 		padding: 0;
 	}
 	
 	#famous .tile
 	{
-		/*width: 333px;
-		height: 144px;*/
+		min-width:300px;
+		width: auto;
+		max-height: 150px;
+		/*max-height: 144px;*/
 		/*height: 10rem;*/
 		margin:0 2rem  2rem 0;
 	}
@@ -559,7 +544,6 @@ footer ul li span
 	#home_tiles .tile
 	{
 		background-color: #fff;
-		margin: 1rem 0.5rem;
 	}
 	
 
@@ -575,32 +559,72 @@ footer ul li span
 		margin: 1rem auto;
 	}
 
-	footer
-	{
-		flex-direction: row;
-		justify-content: space-between;
-	}
+	
 
 }
-
-@media all and (min-width: 1024px)
+@media all and (min-width: 768px)
 {
 	nav
 	{
-		width:100%;
-		justify-content: start;
+		width: auto;
+		margin: 0 3.972%;
+		flex-wrap: nowrap;
+		align-items: flex-start;
+		justify-content: flex-end;
 	}
 	nav *
 	{
-		width: auto;
 	}
-	nav > :not(div#logo)
+	nav #logo
 	{
+		justify-self: flex-end;
+		padding: 2rem 0;
+		width: 100%;
 	}
-	.nav_links a
+	nav #logo img
 	{
-		padding: 0.875rem;
+		margin: 0;
 	}
+	.nav_links a, #subscribe a
+	{
+		/*padding: 0;*/
+		display: inline;
+		border: none;
+	}
+	.nav_links a:hover, #subscribe a:hover
+	{
+
+		border-bottom: none;
+	}
+	.nav_links , #subscribe 
+	{
+		padding: 3rem 0;
+		margin-top: 5px;
+		width: 11.5rem;
+	}
+	.nav_links:hover , #subscribe:hover 
+	{
+		border-top:2px solid #0065fc;
+		margin-bottom: 0;
+		padding-top: 2.875rem;
+
+	}
+	nav #subscribe
+	{
+		order: 4;
+		text-align: center;
+	}
+	footer
+	{
+		margin-top: 3rem;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+}
+
+@media all and (min-width: 1330px)
+{
+	
 	#logo img
 	{
 		width: 8.125rem;
@@ -611,42 +635,129 @@ footer ul li span
 	}
 	#search_input
 	{
-		max-width: 40%;
+		width: auto;
+	}
+	#filter_text
+	{
+		width: auto;
+		margin-right: 2rem;
 	}
 	#center
 	{
 		flex-flow: row-reverse nowrap;
+		justify-content: space-around;
 		margin: 0 3.972%;
 
 	}
 	#famous
 	{
-		width: 31.119%;
+		overflow-x: auto;
+		max-width: 31.119%;
+		width: auto;
+		padding: 0 1rem;
 	}
 	#famous_tiles
 	{
 		position: relative;
 		flex-flow: column nowrap;
-		width: 100%;
+		width: auto;
+		align-content: center;
 	}
 
-	#famous_tiles .tile
+
+	#famous #famous_tiles .tile
 	{
-		margin: 1rem 1.5rem;
+		/*margin: 0 auto 1rem auto;*/
+		width: 100%;
+		/*max-width: 150px;*/
 	}
 	#home
 	{
-		justify-content: center;
-		max-width: 63%;
+		justify-self: start;
+		background-color: #f2f2f2;
+		border-radius: 1rem;
+		width: 100%;
+		padding: 0;
+
 	}
 	#home_tiles
 	{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		justify-content: start;
 		padding: 0;
+		margin: 0 3.972%;
 	}
 	#home_tiles .tile
 	{
 		max-width: 240px;
 		max-height: 200px;
+		/*margin: 1rem;*/
+	}
+	#activities
+	{
+		margin: 2rem 3.972%;
+	}
+	#activities h2
+	{
+		margin: 0;
+	}
+	#activities .tile
+	{
+		height: auto;
+	}
+	
+	#activities .tile .tiles_img
+	{
+		height: calc(100% - 3rem);
+		margin-bottom: 1rem;
+	}
+	#activities .tile p
+	{
+		margin-top: 0;
+	}
+
+	#activities_tiles
+	{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 15.486vw 15.486vw;
+		grid-template-areas:  "a b c d"
+							  "a e c f";
+		grid-gap: 2rem;
+
+	}
+
+	#activity_tile_1
+	{
+
+		grid-area: a;
+	}
+	#activity_tile_2
+	{
+
+		grid-area: b;
+	}
+	#activity_tile_3
+	{
+
+		grid-area: e;
+	}
+	#activity_tile_4
+	{
+
+		grid-area: c;
+	}
+	#activity_tile_5
+	{
+
+		grid-area: d;
+	}
+	#activity_tile_6
+	{
+
+		grid-area: f;
 	}
 }
 
