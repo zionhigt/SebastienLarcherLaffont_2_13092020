@@ -36,8 +36,8 @@
 
 .ico_star, .ico_star_off
 {
-	width: 0.625rem;
-	height: 0.625rem;
+	width: 0.75rem;
+	height: 0.75rem;
 	margin-right: 0.125rem;
 }
 
@@ -73,11 +73,11 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 body
 {
-	position: relative;
-	left: 0;
-	top: 0;
+	/*position: relative;*/
+	
 	margin: 0;
 	padding: 0;
 	font-family: Raleway, sans-serif;
@@ -85,16 +85,22 @@ body
 }
 
 
-#main_wrapper, body, footer
+#main_wrapper, body, main, footer
 {
-	max-width: 100%;
+	width: 100%;
+	overflow-x: hidden;
 }
+#main_wrapper
+{
+	position: absolute;
+}
+
 #search_bar,
 #filters,
 #info,
 footer ul,
 .tiles_img,
-.tile p,
+figcaption,
 h2:not(#search_title), 
 .stars, 
 .more 
@@ -128,7 +134,7 @@ nav #subscribe
 }
 nav #subscribe a 
 {
-	/*margin-right: 8%;*/
+	margin-right: 8%;
 	color: #0065fc;
 }
 .nav_links a
@@ -185,10 +191,7 @@ nav #logo img
 	border: none;
 	border-radius: 1rem;
 	right:3.972%;
-}
-#search_set button p
-{
-	display: none;
+	color: transparent;
 }
 #map_marker
 {
@@ -280,110 +283,114 @@ p.text_filter
 	height: 100%;	
 }
 
-.tile
+figure
 {
+	
 	box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
 	border-radius: 1.2rem;
-	overflow: hidden;
+	background-color: #fff;
 	padding: 0.3rem;
+	margin: 0 0 0.75rem 0;
+
 }
-.tile p span
+
+
+figcaption span
 {
 	font-weight: bold;
 }
-.tile p
-{
-	margin-top: 0.6rem;
-}
-.price_tile
-{
-	font-size: 0.875rem;
-}
+
+
 #famous
 {
 	background-color: #f2f2f2;
 	/*padding-bottom: 2rem!important;*/
 }
 
-#famous, #home
+#famous, #home, #activities
 {
 	padding: 1rem;
 }
-#famous h2, #home h2, #activities h2
+#home h2, #activities h2
 {
 	padding: 2.5rem 1.5rem 1.5rem 0;
 }
 
 #famous h2
 {
+	padding: 2.5rem 0;
 	background: no-repeat 
 	content-box 
 	right 
 	center/1.5rem 
 	url("../data/images/ico/chart-line-solid.svg");
 }
-
-#famous .tile
+#activities h2
 {
-	position: relative;
-	max-width: auto;
-	height: 38.84vw;
-	max-height: 200px;
-	background-color: #fff;
-	margin-bottom: 0.75em;
-	margin-left: auto;
-	margin-right: auto;
-
+	margin: 0;
+}
+#famous_tiles figure
+{
+	display: flex;
+	height: 144px;
 
 }
-#famous .tile p
+#famous figure .tiles_img
 {
-	margin-bottom: 1rem;
-}
-
-#famous .stars
-{
-	margin-top: auto;
-}
-#famous .tile .tiles_img
-{
+	max-width: 40%;
+	height: auto;
 	overflow: hidden;
+	margin: 0;
 	border-radius: 1rem 0 0 1rem;
-	width: 37.84%;
-	height: 100%;
-	margin: 0 1.25rem 0 0;
-	float: left;
+}
+#famous figure figcaption
+{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	padding: 0.3rem;
+}
+#famous figure figcaption *
+
+{
+	margin: 0;
 
 }
-#home .tile, #activities .tile
+#home figure figcaption *
 {
-	position: relative;
-	margin: 0 auto 0.75em auto;
-	max-width: 333px;
-	height: 198px;
-
+	margin: 0.3rem 0;
 }
 
-#home .tile .tiles_img
+#home_tiles figure, #activities_tiles figure
 {
+	display: flex;
+	flex-flow: row wrap;
+	min-height: 210px;
+	/*max-width: 333px;*/
+}
+#home_tiles figure figcaption
+{
+	align-self: start;
+	min-height: 66px;
+}
+#home_tiles figure .tiles_img
+{
+	max-height: 114px;
 	overflow: hidden;
 	border-radius: 1rem 1rem 0 0;
-	width: 100%;
-	height: 60%;
 	margin: 0;
 }
 
-
-#home
+#home figure figcaption
 {
-	clear: both;
+	display: flex;
+	flex-flow: column wrap;
+	align-content: space-between;
 }
 
 #home .stars
 {
-	position: absolute;
-	bottom:4.5%;
-	width: auto;
+	justify-self: flex-end;
 }
 p.more 
 {
@@ -400,36 +407,38 @@ p.more a
 {
 	margin-bottom: 3.75rem;
 }
-#activities .tile
+#activities figure
 {
 	padding: 0;
+	margin-bottom: 1.625rem;
+	/*min-width: 333px;*/
 }
-#activities .tile p
+#activities figcaption
 {
 	font-weight: bold;
 	margin: 1.5rem auto 1rem 1.25rem;
 
 }
 
-#activities .tile .tiles_img
+#activities figure .tiles_img
 {
 	overflow: hidden;
 	border-radius: 1rem 1rem 0 0;
+	max-height: 180px;
 	width: 100%;
-	height: 67.5%;
 	margin: 0;
 }
 
 footer
 {
 	background-color: #f2f2f2;
-	position: absolute;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	top: 100%;
 	left: 0;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	padding: 2rem 1rem;
 	padding-bottom: 1rem;
 }
@@ -460,17 +469,8 @@ footer ul li span
 	font-weight: bold;
 }
 
-@media all and (max-width: 320px) /*Mobile S devices*/
-{
-	html
-	{
-		font-size: 12px;
-	}
-}
 
-
-
-@media all and (min-width: 450px)
+@media all and (min-width: 540px)
 {
 	
 	#search_set button
@@ -479,21 +479,15 @@ footer ul li span
 		position: relative;
 		border-radius: 0 1rem 1rem 0;
 		background-image: none;
+		font-size: 1.125rem;
+		color: white;
 
 	}
 	#search_input
 	{
 		width: auto;
 	}
-	#search_set button p
-	{
-		display: inline;
-		padding: 0 0.75rem;
-		font-size: 1.125rem;
-		color: white;
-		font-weight: bold;
-	}
-
+	
 	#center
 	{
 		display: flex;
@@ -514,7 +508,6 @@ footer ul li span
 		width: auto;
 		left: 0;
 		margin: 0 auto;
-		padding-left: 1.5rem;
 	}
 	#famous_tiles
 	{
@@ -525,14 +518,14 @@ footer ul li span
 		padding: 0;
 	}
 	
-	#famous .tile
+	#famous figure
 	{
 		min-width:300px;
 		width: auto;
 		max-height: 150px;
 		/*max-height: 144px;*/
 		/*height: 10rem;*/
-		margin:0 2rem  2rem 0;
+		margin:0 2rem 2rem 0;
 	}
 	
 	#home_tiles
@@ -541,9 +534,11 @@ footer ul li span
 		display: flex;
 		flex-flow: row wrap;
 	}
-	#home_tiles .tile
+	#home_tiles figure
 	{
 		background-color: #fff;
+		margin: 1rem auto;
+		max-width: 333px;
 	}
 	
 
@@ -554,10 +549,16 @@ footer ul li span
 
 	}
 
-	#activities_tiles .tile
+	#activities_tiles figure
 	{
 		margin: 1rem auto;
+		max-width: 333px;
 	}
+	#activities_tiles figure .tiles_img
+	{
+		max-width: 100%;
+	}
+
 
 	
 
@@ -614,6 +615,9 @@ footer ul li span
 		order: 4;
 		text-align: center;
 	}
+	#activities figure 
+	{
+	}
 	footer
 	{
 		margin-top: 3rem;
@@ -622,7 +626,7 @@ footer ul li span
 	}
 }
 
-@media all and (min-width: 1330px)
+@media all and (min-width: 1325px)
 {
 	
 	#logo img
@@ -645,30 +649,28 @@ footer ul li span
 	#center
 	{
 		flex-flow: row-reverse nowrap;
-		justify-content: space-around;
+		justify-content: space-between;
 		margin: 0 3.972%;
+		width: auto;
 
 	}
 	#famous
 	{
-		overflow-x: auto;
-		max-width: 31.119%;
-		width: auto;
-		padding: 0 1rem;
+		width: 31%;
+		padding: 0 2.375rem;
 	}
 	#famous_tiles
 	{
-		position: relative;
-		flex-flow: column nowrap;
+		flex-flow: column wrap;
 		width: auto;
-		align-content: center;
+		align-items: center;
 	}
 
 
-	#famous #famous_tiles .tile
+	#famous #famous_tiles figure
 	{
 		/*margin: 0 auto 1rem auto;*/
-		width: 100%;
+		width: auto;
 		/*max-width: 150px;*/
 	}
 	#home
@@ -676,7 +678,8 @@ footer ul li span
 		justify-self: start;
 		background-color: #f2f2f2;
 		border-radius: 1rem;
-		width: 100%;
+		width: 65% ;
+		/*width: auto;*/
 		padding: 0;
 
 	}
@@ -684,15 +687,16 @@ footer ul li span
 	{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		justify-content: start;
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 2rem;
 		padding: 0;
 		margin: 0 3.972%;
 	}
-	#home_tiles .tile
+	#home_tiles figure 
 	{
-		max-width: 240px;
+
 		max-height: 200px;
+		width: 100%;
 		/*margin: 1rem;*/
 	}
 	#activities
@@ -703,19 +707,20 @@ footer ul li span
 	{
 		margin: 0;
 	}
-	#activities .tile
+	#activities figure
 	{
-		height: auto;
+		height: 100%;
 	}
 	
-	#activities .tile .tiles_img
+	#activities figure .tiles_img
 	{
-		height: calc(100% - 3rem);
-		margin-bottom: 1rem;
+		min-height: calc(100% - 3rem);
+
 	}
-	#activities .tile p
+	#activities figcaption
 	{
-		margin-top: 0;
+		margin: auto 1rem;
+		vertical-align: center;
 	}
 
 	#activities_tiles
@@ -726,6 +731,7 @@ footer ul li span
 		grid-template-areas:  "a b c d"
 							  "a e c f";
 		grid-gap: 2rem;
+		align-items: start;
 
 	}
 
