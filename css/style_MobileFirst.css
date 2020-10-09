@@ -329,21 +329,12 @@ span
 	padding: 1rem;
 }
 #home h2
-<<<<<<< HEAD
 {
 	padding: 1.5rem 0;
 	margin: 0;
 }
 #activities h2
 {
-=======
-{
-	padding: 1.5rem 0;
-	margin: 0;
-}
-#activities h2
-{
->>>>>>> 4072508bfda75247bdc1c9bc141f04a25ab36a7d
 	padding: 0 0 1.5rem 0;
 }
 #famous h2
