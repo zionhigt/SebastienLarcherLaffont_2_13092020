@@ -58,6 +58,8 @@
 
 #map_marker
 {
+	position: absolute;
+	left: 0;
 	width: 3.125rem;
 	height: 3.125rem;
 	background: no-repeat center/1rem url("../data/images/ico/map-marker-alt-solid.svg") #f2f2f2;
@@ -137,6 +139,7 @@ nav p a
 nav #subscribe
 {
 	text-align: right;
+	margin: 2.25rem 0 1.25rem 0;
 
 }
 nav #subscribe a 
@@ -161,16 +164,19 @@ nav #logo
 {
 
 	text-align: justify;
+	margin: 1rem 0 1.25rem 0;
 }
 nav #logo img
 {
-	width: 8.125rem;
+	width: 7rem;
 	margin-left: 1.5rem;
 }
 
 #search_set
 {
+	position: relative;
 	width: auto;
+	height: 3.125rem;
 	max-width: 420px;
 	display: flex;
 	justify-content: center;
@@ -180,13 +186,15 @@ nav #logo img
 
 #search_input
 {
-	position: relative;
-	width: auto;
+	position: absolute;
+	left: 3.125rem;
+	width: calc(100% - 4.125rem);
+	height: 3.125rem;
 	flex-grow: 2;
 	border: 1px solid #f2f2f2;
 	border-radius: 0 1rem 1rem 0;
 	font-size: 1.125rem;
-	padding-left: 1rem;
+	padding: 0 3.125rem 0 1rem;
 	font-weight: bolder;
 }
 #search_set button
@@ -197,7 +205,7 @@ nav #logo img
 	background-color: #0065fc;
 	border: none;
 	border-radius: 1rem;
-	right:3.972%;
+	right:0;
 	color: transparent;
 	font-size: 1.125rem;
 }
@@ -215,8 +223,10 @@ label
 }
 .checkable:checked + label.filter_contain
 {
-	background-color: #deebff;
+	background-color: #fff;
 	border-color: #deebff;
+	color: rgba(0, 101, 252, 0.85);
+	box-shadow: 0rem 0.2rem 0.4rem  rgba(0, 0, 0, 0.20);
 }
 
 #filters
@@ -297,6 +307,12 @@ p.text_filter
 	width: 100%;
 	height: 100%;	
 }
+figure:hover
+{
+	background-color: #fefefe;
+	box-shadow: 0rem 0.15rem 0.1rem rgba(0, 0, 0, 0.15);
+}
+
 
 figure
 {
@@ -355,7 +371,7 @@ span
 #famous figure
 {
 	display: flex;
-	height: 144px;
+	height: 9rem;
 
 }
 #famous figure .tiles_img
@@ -383,13 +399,14 @@ span
 {
 	display: flex;
 	flex-flow: row wrap;
-	min-height: 210px;
+	min-height: 13rem;
+	min-width: 15rem;
 }
 
 #home_tiles figure figcaption
 {
 	align-self: start;
-	min-height: 66px;
+	min-height: 3.75rem;
 }
 #home figure .tiles_img
 {
@@ -471,11 +488,14 @@ footer ul li a
 
 @media all and (min-width: 540px)
 {
-	
+	#search_set
+	{
+		width: 26rem;
+	}
 	#search_set button
 	{
-		width: auto;
-		position: relative;
+		width: 8rem;
+		right: -2rem;
 		border-radius: 0 1rem 1rem 0;
 		background-image: none;
 		font-size: 1.125rem;
@@ -567,8 +587,9 @@ footer ul li a
 	}
 	nav #logo
 	{
-		padding: 2rem 0;
+		padding: 1.875rem 0;
 		width: 100%;
+		margin: 0;
 	}
 	nav #logo img
 	{
@@ -588,7 +609,7 @@ footer ul li a
 	.nav_links , #subscribe 
 	{
 		padding: 3rem 0;
-		margin-top: 5px;
+		margin-top: 0;
 		width: 11.5rem;
 	}
 	.nav_links:hover , #subscribe:hover 
@@ -598,10 +619,11 @@ footer ul li a
 		padding-top: 2.875rem;
 
 	}
-	nav #subscribe
+	nav p#subscribe
 	{
 		order: 4;
 		text-align: center;
+		margin: 0;
 	}
 	#activities figure 
 	{
@@ -640,6 +662,11 @@ footer ul li a
 		width: auto;
 		margin-right: 2rem;
 	}
+	label.filter_contain:hover
+	{
+		color: rgba(0, 101, 252, 0.85);
+		border-color: #deebff;
+	}
 	#center
 	{
 		flex-flow: row-reverse nowrap;
@@ -650,22 +677,24 @@ footer ul li a
 	}
 	#famous
 	{
-		width: 31%;
+		width: 26rem;
 		padding: 0 2.375rem;
 		overflow-x: hidden;
 	}
 	#famous_tiles
 	{
+		width: 21rem;
 		flex-flow: column wrap;
 		width: auto;
 		align-items: center;
+
 	}
 
 
 	#famous #famous_tiles figure
 	{
 		/*margin: 0 auto 1rem auto;*/
-		width: auto;
+		width: 21rem;
 		/*max-width: 150px;*/
 	}
 	#home
@@ -673,10 +702,14 @@ footer ul li a
 		justify-self: start;
 		background-color: #f2f2f2;
 		border-radius: 1rem;
-		width: 65% ;
+		width: 56rem;
 		/*width: auto;*/
 		padding: 0;
 
+	}
+	#home h2, #famous h2
+	{
+		padding: 3rem 0 1.25rem 0;
 	}
 	#home h2, p.more
 	{
@@ -687,16 +720,17 @@ footer ul li a
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(2, 1fr);
-		grid-gap: 2rem;
+		grid-gap: 1.875rem;
 		padding: 0;
-		margin: 0 3.972%;
+		margin: 0 2.5rem;
+		width: 51rem;
 	}
 	#home_tiles figure 
 	{
 
-		max-height: 200px;
+		max-height: 13rem;
 		width: 100%;
-		/*margin: 1rem;*/
+		margin: 0;
 	}
 	#activities
 	{
@@ -708,7 +742,7 @@ footer ul li a
 	}
 	#activities figure
 	{
-		height: 100%;
+		margin: 0;
 	}
 	
 	#activities figure .tiles_img
@@ -725,9 +759,9 @@ footer ul li a
 	{
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: 15.486vw 15.486vw;
+		grid-template-rows: 15rem 15rem;
 		grid-template-areas:  "a b c d"
-							  "a e c f";
+		"a e c f";
 		grid-gap: 2rem;
 
 	}
