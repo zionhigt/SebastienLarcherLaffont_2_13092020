@@ -322,7 +322,7 @@ figure
 figure:active
 {
 	background-color: #fefefe;
-	box-shadow: 0rem 0.15rem 0.1rem rgba(0, 0, 0, 0.4);
+	box-shadow: 0rem 0.15rem 0.1rem rgba(0, 0, 0, 0.2);
 }
 
 figure a
@@ -495,7 +495,7 @@ footer ul li a
 
 
 
-@media all and (min-width: 540px)
+@media all and (min-width: 480px)
 {
 	#search_set
 	{
@@ -650,8 +650,23 @@ footer ul li a
 		padding: 0 1rem;
 	}
 }
+@media all and (min-width: 1024px){
 
-@media all and (min-width: 1325px)
+	#home_tiles, #activities_tiles
+	{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 2.5rem;
+		/*justify-content: space-around;*/
+		padding: 0;
+		margin: 0 2.5rem;
+		width: auto;
+	}
+	
+}
+
+@media all and (min-width: 1400px)
 {
 	
 	#logo img
@@ -678,7 +693,10 @@ footer ul li a
 	}
 	#center
 	{
-		flex-flow: row-reverse nowrap;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		/*grid-template-rows: 1fr;*/
+		grid-gap: 3rem;
 		justify-content: space-between;
 		margin: 0 3.972%;
 		width: auto;
@@ -686,7 +704,8 @@ footer ul li a
 	}
 	#famous
 	{
-		width: 26rem;
+		/*width: 26rem;*/
+		grid-column: 2;
 		padding: 0 2.375rem;
 		overflow-x: hidden;
 	}
@@ -703,15 +722,17 @@ footer ul li a
 	#famous #famous_tiles figure
 	{
 		/*margin: 0 auto 1rem auto;*/
-		width: 21rem;
+		width: 100%;
 		/*max-width: 150px;*/
 	}
 	#home
 	{
 		justify-self: start;
 		background-color: #f2f2f2;
+		grid-row: 1;
+		grid-gap: 2rem;
 		border-radius: 1rem;
-		width: 56rem;
+		width: 100%;
 		/*width: auto;*/
 		padding: 0;
 
@@ -724,16 +745,7 @@ footer ul li a
 	{
 		margin:0 3.972%;
 	}
-	#home_tiles
-	{
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		grid-gap: 1.875rem;
-		padding: 0;
-		margin: 0 2.5rem;
-		width: 51rem;
-	}
+	
 	#home_tiles figure 
 	{
 
@@ -741,13 +753,10 @@ footer ul li a
 		width: 100%;
 		margin: 0;
 	}
-	#activities
-	{
-		margin: 2rem 3.972%;
-	}
+	
 	#activities h2
 	{
-		margin: 0;
+		margin: 4rem 0 0 3.972%;
 	}
 	#activities figure
 	{
@@ -766,6 +775,7 @@ footer ul li a
 
 	#activities_tiles
 	{
+		margin: 0 3.972%;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: 15rem 15rem;
@@ -806,4 +816,6 @@ footer ul li a
 		grid-area: f;
 	}
 }
+
+
 
