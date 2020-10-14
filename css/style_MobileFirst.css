@@ -205,12 +205,28 @@ label
 	display: block;
 	margin-bottom: 2.5rem;
 }
+.filter
+{
+	position: relative;
+}
+
+.filter label
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	z-index: 2;
+
+}
 
 .checkable
 {
 	display: none;
 }
-.checkable:checked + label.filter-contain
+.filter .checkable:checked + div.filter-contain
 {
 	background-color: #fff;
 	border-color: #deebff;
@@ -678,7 +694,7 @@ footer ul li a
 		width: auto;
 		margin-right: 2rem;
 	}
-	label.filter-contain:hover
+	.filter label:hover + input + .filter-contain
 	{
 		color: rgba(0, 101, 252, 0.85);
 		border-color: #deebff;
