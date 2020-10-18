@@ -1,13 +1,3 @@
-
-#__bs_notify__
-{
-	display: none!important;
-}
-
-*
-{
-	box-sizing: border-box;
-}
 /*------------------ICONS--------------------*/
 .ico-search
 {
@@ -43,10 +33,18 @@
 {
 	background: no-repeat center/cover url("../data/images/ico/star-solid-light-off.svg");
 }
+
 .stars
 {
 	display: flex;
 	margin-left: 0.7rem;
+}
+
+.ico-star, .ico-star-off
+{
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-right: 0.125rem;
 }
 
 #map_marker
@@ -54,6 +52,30 @@
 	position: absolute;
 	left: 0;
 	background: no-repeat center/1rem url("../data/images/ico/map-marker-alt-solid.svg") #f2f2f2;
+}
+
+.ico-filter
+{
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	top: -2px;
+	left: -2px;
+	border-radius: 1.5rem;
+	background-color: #deebff;
+
+}
+
+#ico_info
+{
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	padding:0.22rem;
+	top: -0.32rem;
+	background: no-repeat center/20% url("../data/images/ico/info-solid.svg");
+	border-radius: 0.75rem;
+	border: 1px solid #f2f2f2;
 }
 
 @font-face
@@ -70,6 +92,11 @@
 	format('truetype'),
 	font-weight: normal;
 	font-style: normal;
+}
+
+*
+{
+	box-sizing: border-box;
 }
 
 body
@@ -128,18 +155,19 @@ nav *
 	color: black;
 }
 
-nav #subscribe
+nav #logo
 {
-	text-align: right;
-	margin: 2.25rem 0 1.25rem 0;
+	text-align: justify;
+	margin: 1rem 0 1.25rem 0;
+}
 
-}
-nav #subscribe a 
+nav #logo img
 {
-	margin-right: 8%;
-	padding: auto 0;
-	color: #0065fc;
+	width: 7rem;
+	margin-left: 1.5rem;
 }
+
+
 .nav-links a
 {
 	padding: 1rem;
@@ -147,21 +175,32 @@ nav #subscribe a
 	display: block;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
+
 .nav-links a:hover
 {
 	color: #0065fc;
 	border-bottom: 2px solid #0065fc;
 }
-nav #logo
-{
 
-	text-align: justify;
-	margin: 1rem 0 1.25rem 0;
-}
-nav #logo img
+nav #subscribe
 {
-	width: 7rem;
-	margin-left: 1.5rem;
+	text-align: right;
+	margin: 2.25rem 0 1.25rem 0;
+
+}
+
+nav #subscribe a 
+{
+	margin-right: 8%;
+	padding: auto 0;
+	color: #0065fc;
+}
+
+
+label
+{
+	display: block;
+	margin-bottom: 2.5rem;
 }
 
 #search_set
@@ -200,11 +239,6 @@ nav #logo img
 }
 
 
-label
-{
-	display: block;
-	margin-bottom: 2.5rem;
-}
 .filter
 {
 	position: relative;
@@ -226,6 +260,7 @@ label
 {
 	display: none;
 }
+
 .filter .checkable:checked + div.filter-contain
 {
 	background-color: #fff;
@@ -239,6 +274,7 @@ label
 	
 	margin-bottom: 2.5rem;
 }
+
 #filter_text
 {
 	width: 100%;
@@ -259,18 +295,6 @@ label
 	border-radius: 2rem;
 }
 
-
-.ico-filter
-{
-	position: absolute;
-	width: 3rem;
-	height: 3rem;
-	top: -2px;
-	left: -2px;
-	border-radius: 1.5rem;
-	background-color: #deebff;
-
-}
 p.text-filter
 {
 	padding-left: 3.2rem;
@@ -290,26 +314,7 @@ p.text-filter
 	margin-left: 2.375rem;
 }
 
-#ico_info
-{
-	position: absolute;
-	width: 1.5rem;
-	height: 1.5rem;
-	padding:0.22rem;
-	top: -0.32rem;
-	background: no-repeat center/20% url("../data/images/ico/info-solid.svg");
-	border-radius: 0.75rem;
-	border: 1px solid #f2f2f2;
-}
 /*--------------------------------FIGURES-----------------------------------*/
-.tiles-img img
-{
-	position: relative;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;	
-}
-
 
 figure
 {
@@ -335,11 +340,12 @@ figure a
     bottom: 0;
     left: 0;
 }
-.ico-star, .ico-star-off
+.tiles-img img
 {
-	width: 0.75rem;
-	height: 0.75rem;
-	margin-right: 0.125rem;
+	position: relative;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;	
 }
 
 .price-tile
