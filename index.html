@@ -7,326 +7,371 @@
 	<link rel="stylesheet" href="css/style_MobileFirst.css">
 	<title>Reservia, trouvez l'hébergement pour des vacances de rêves</title>
 </head>
-<body>
-	<div id="main_wrapper">
+<body class="container">
+	<div id="main_wrapper" class="container">
 		<header>
-			<nav>
+			<nav class="flex-wrap">
 				<div id="logo">
-					<img src="data/images/logo/Reservia.svg" alt="logo reservia">
+					<img src="data/images/logo/Reservia.svg" alt="logo reservia"/>
 				</div>
-				<p id="subscribe"><a href="#">S'inscrire</a></p>
-				<p class="nav_links"><a href="#home">Hébergements</a></p>
-				<p class="nav_links"><a href="#activities">Activités</a></p>
+				<p id="subscribe"><a class="bold" href="#">S'inscrire</a></p>
+				<p class="nav-links"><a class="bold" href="#home">Hébergements</a></p>
+				<p class="nav-links"><a class="bold" href="#activities">Activités</a></p>
 			</nav>
 		</header>
 
-		<div id="search_bar">
-			<h2 id="search_title">Trouvez votre hébergement pour des vacances de rêve</h2>
+		<div id="search_bar" class="bordering">
+			<h2 id="search_title" class="bold">Trouvez votre hébergement pour des vacances de rêve</h2>
 			<form id="send_your_search" action="#" method="get">
+
 				<label for="search_input">En plein centre ville ou en pleine nature</label>
 				<div id="search_set">
-					<div id="map_marker"></div>
-					<input id="search_input" name="search" type="text" value="Marseille, France">
-					<button class="ico_search">Rechercher</button>
+					<div id="map_marker" class="square rounded-tl-bl"></div>
+					<input id="search_input" class="bold" name="search" type="text" value="Marseille, France">
+					<button class="ico-search square">Rechercher</button>
 				</div>
+
 			</form>
 			
 		</div>
 
-		<div id="filters">
-			<p id="filter_text">Filtres</p>
+		<div id="filters" class="bordering flex-wrap">
+			<p id="filter_text" class="bold">Filtres</p>
 
-			<input type="checkbox" id="btn-filter-1" class="checkable">
-			<label class="filter_contain" for="btn-filter-1">
-				<div class="ico_filter money-bill"></div>
-				<p class="text_filter">Économique</p>
-				<div class="ico_filter child"></div>
-			</label>
+			<div class="filter">
+				<label for="btn-filter-1"></label>
+				<input type="checkbox" id="btn-filter-1" class="checkable">
+				<div class="filter-contain">
+					<div class="ico-filter money-bill"></div>
+					<p class="text-filter bold">Économique</p>
+				</div>
+			</div>
 
-			<input type="checkbox" id="btn-filter-2" class="checkable">
-			<label class="filter_contain" for="btn-filter-2">
-				<div class="ico_filter money-bill"></div>
-				<p class="text_filter">Familial</p>
-			</label>
+			<div class="filter">
+				<label for="btn-filter-2"></label>
+				<input type="checkbox" id="btn-filter-2" class="checkable">
+				<div class="filter-contain">
+					<div class="ico-filter child"></div>
+					<p class="text-filter bold">Familial</p>
+				</div>
+			</div>
 
-			<input type="checkbox" id="btn-filter-3" class="checkable">
-			<label class="filter_contain" for="btn-filter-3">
-				<div class="ico_filter heart"></div>
-				<p class="text_filter">Romantique</p>
-			</label>
+			<div class="filter">
+				<label for="btn-filter-3"></label>
+				<input type="checkbox" id="btn-filter-3" class="checkable">
+				<div class="filter-contain">
+					<div class="ico-filter heart"></div>
+					<p class="text-filter bold">Romantique</p>
+				</div>
+			</div>
 
-			<input type="checkbox" id="btn-filter-4" class="checkable">
-			<label class="filter_contain" for="btn-filter-4">
-				<div class="ico_filter dog"></div>
-				<p class="text_filter">Animaux autorisés</p>		
-			</label>
-
+			<div class="filter">
+				<label for="btn-filter-4"></label>
+				<input type="checkbox" id="btn-filter-4" class="checkable">
+				<div class="filter-contain">
+					<div class="ico-filter dog"></div>
+					<p class="text-filter bold">Animaux autorisés</p>
+				</div>
+			</div>
 		</div>
 
-		<div id="info">
+		<div id="info" class="bordering">
 			<div id="ico_info"></div>
 			<p>Plus de 500 logements sont disponibles dans cette ville</p>
 		</div>
 
-		<main id="center">
+		<main id="center" class="container">
 
 			<aside id="famous">
-				<h2>Les plus populaires</h2>
+				<h2 class="bordering bold">Les plus populaires</h2>
 				<div id="famous_tiles">
 					<figure>
-						<div class="tiles_img" id="famous_tile_1">
-							<img src="data/images/hebergements/4_small/famous_1.jpg" alt="Populaire">
+						<div class="tiles-img bordering rounded-tl-bl" id="famous_tile_1">
+							<img 
+							srcset="data/images/hebergements/4_small/famous_1.jpg 532w,
+							data/images/hebergements/3_medium/famous_1.jpg 1063w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							src="data/images/hebergements/4_small/famous_1.jpg" alt="Populaire"/>
 						</div>
-						<figcaption>
-							<p><span>Hôtel le soleil du matin</span></p>
-							<p class="price_tile">Nuit à partir de <span>128€</span></p>
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
+						<figcaption class="bordering">
+							<a href="#famous"></a>
+							<p><span class="bold">Hôtel le soleil du matin</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">128€</span></p>
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
 							</div>
 						</figcaption>
-						<a href="#famous"></a>
 						
 					</figure>
 					<figure>
-						<div class="tiles_img" id="famous_tile_2">
-							<img src="data/images/hebergements/4_small/famous_2.jpg" alt="Populaire">
+						<div class="tiles-img bordering rounded-tl-bl" id="famous_tile_2">
+							<img 
+							srcset="data/images/hebergements/4_small/famous_2.jpg 504w,
+							data/images/hebergements/3_medium/famous_2.jpg 1008w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							src="data/images/hebergements/4_small/famous_2.jpg" alt="Populaire"/>
 						</div>
-						<figcaption>
-							<p><span>Au coeur de l'eau Chambres d'hôtes</span></p>
-							<p class="price_tile">Nuit à partir de <span>71€</span></p>
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star_off"></div>
+						<figcaption class="bordering">
+							<a href="#famous"></a>
+							<p><span class="bold">Au coeur de l'eau Chambres d'hôtes</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">71€</span></p>
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star-off"></div>
 							</div>
 						</figcaption>
-						<a href="#famous"></a>
 					</figure>
 					<figure>
-						<div class="tiles_img" id="famous_tile_3">
-							<img src="data/images/hebergements/4_small/famous_3.jpg" alt="Populaire">
+						<div class="tiles-img bordering rounded-tl-bl" id="famous_tile_3">
+							<img 
+							srcset="data/images/hebergements/4_small/famous_3.jpg 500w,
+							data/images/hebergements/3_medium/famous_3.jpg 1000w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							src="data/images/hebergements/4_small/famous_3.jpg" alt="Populaire"/>
 						</div>
-						<figcaption>
-							<p><span>Hôtel Tout bleu et Blanc</span></p>
-							<p class="price_tile">Nuit à partir de <span>68€</span></p>
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star_off"></div>
+						<figcaption class="bordering">
+							<a href="#famous"></a>
+							<p><span class="bold">Hôtel Tout bleu et Blanc</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">68€</span></p>
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star-off"></div>
 							</div>
 						</figcaption>
-						<a href="#famous"></a>
 					</figure>
 				</div>
 			</aside>
 			<section id="home">
-				<h2>Hébergements à Marseille</h2>
+				<h2 class="bordering bold">Hébergements à Marseille</h2>
 				<div id="home_tiles">
 					<figure>
-						<div class="tiles_img" id="home_1">
-							<img src="data/images/hebergements/4_small/home_1.jpg"
-							srcset="data/images/hebergements/4_small/home_1.jpg 750w,
-							data/images/hebergements/2_large/home_1.jpg 2997w,
+						<div class="tiles-img bordering" id="home_1">
+							<img srcset="data/images/hebergements/4_small/home_1.jpg 750w,
 							data/images/hebergements/3_medium/home_1.jpg 1499w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							src="data/images/hebergements/4_small/home_1.jpg"
 							alt="hebergements Marseille"/>
 						</div>
-						<figcaption>
-							<p><span>Auberge la Cannebière</span></p>
-							<p class="price_tile">Nuit à partir de <span>25€</span></p>
+						<figcaption class="bordering">
+							<a href="#home"></a>
+							<p><span class="bold">Auberge la Cannebière</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">25€</span></p>
 
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star_off"></div>
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star-off"></div>
 							</div>
 						</figcaption>
-							<a href="#home"></a>
 						
 					</figure>
 					<figure>
-						<div class="tiles_img" id="home_2">
+						<div class="tiles-img bordering" id="home_2">
 							<img src="data/images/hebergements/4_small/home_2.jpg"
 							srcset="data/images/hebergements/4_small/home_2.jpg 684w,
-							data/images/hebergements/2_large/home_2.jpg 2736w,
 							data/images/hebergements/3_medium/home_2.jpg 1368w"
-							sizes="(max-width:540px) 684px, 600px"
-							alt="hebergements Marseille"/>
-						</div>
-						<figcaption>
-							<p><span>Hôtel du port</span></p>
-							<p class="price_tile">Nuit à partir de <span>52€</span></p>
-
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-							</div>
-						</figcaption>
-							<a href="#home"></a>
-					</figure>
-					<figure>
-						<div class="tiles_img" id="home_3">
-							<img src="data/images/hebergements/4_small/home_3.jpg"
-							srcset="data/images/hebergements/4_small/home_3.jpg 750w,
-							data/images/hebergements/2_large/home_3.jpg 3000w,
-							data/images/hebergements/3_medium/home_3.jpg 1500w"
-							sizes="(max-width:540px) 750px, 700px"
-							alt="hebergements Marseille"/>
-						</div>
-						<figcaption>
-							<p><span>Hôtel Les mouettes</span></p>
-							<p class="price_tile">Nuit à partir de <span>76€</span></p>
-
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star_off"></div>
-							</div>
-						</figcaption>
-							<a href="#home"></a>
-					</figure>
-					<figure>
-						<div class="tiles_img" id="home_4">
-							<img src="data/images/hebergements/4_small/home_4.jpg"
-							srcset="data/images/hebergements/4_small/home_4.jpg 500w,
-							data/images/hebergements/2_large/home_4.jpg 2000w,
-							data/images/hebergements/3_medium/home_4.jpg 1000w"
-							sizes="(max-width:540px) 500px, 500px"
-							alt="hebergements Marseille"/>
-						</div>
-						<figcaption>
-							<p><span>Hôtel de la mer</span></p>
-							<p class="price_tile">Nuit à partir de <span>46€</span></p>
-
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star_off"></div>
-								<div class="ico_star_off"></div>
-							</div>
-						</figcaption>
-							<a href="#home"></a>
-					</figure>
-					<figure>
-						<div class="tiles_img" id="home_5">
-							<img src="data/images/hebergements/4_small/home_5.jpg"
-							srcset="data/images/hebergements/4_small/home_5.jpg 652w,
-							data/images/hebergements/2_large/home_5.jpg 2606w,
-							data/images/hebergements/3_medium/home_5.jpg 1303w"
-							sizes="(max-width:540px) 652px, 600px"
-							alt="hebergements Marseille"/>
-						</div>
-						<figcaption>
-							<p><span>Auberge Le Panier</span></p>
-							<p class="price_tile">Nuit à partir de <span>23€</span></p>
-
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star_off"></div>
-							</div>
-						</figcaption>
-							<a href="#home"></a>
-					</figure>
-					<figure>
-						<div class="tiles_img" id="home_6">
-							<img src="data/images/hebergements/4_small/home_6.jpg"
-							srcset="data/images/hebergements/4_small/home_6.jpg 486w,
-							data/images/hebergements/3_medium/home_6.jpg 972w,
-							data/images/hebergements/2_large/home_6.jpg 1944w"
+							sizes="(min-width: 768px) 1000px, 333px"
 							
 							alt="hebergements Marseille"/>
 						</div>
-						<figcaption>
-							<p><span>Hôtel chez Amina</span></p>
-							<p class="price_tile">Nuit à partir de <span>96€</span></p>
+						<figcaption class="bordering">
+							<a href="#home"></a>
+							<p><span class="bold">Hôtel du port</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">52€</span></p>
 
-							<div class="stars">
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
-								<div class="ico_star"></div>
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
 							</div>
 						</figcaption>
+					</figure>
+					<figure>
+						<div class="tiles-img bordering" id="home_3">
+							<img src="data/images/hebergements/4_small/home_3.jpg"
+							srcset="data/images/hebergements/4_small/home_3.jpg 750w,
+							data/images/hebergements/3_medium/home_3.jpg 1500w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							alt="hebergements Marseille"/>
+						</div>
+						<figcaption class="bordering">
 							<a href="#home"></a>
+							<p><span class="bold">Hôtel Les mouettes</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">76€</span></p>
+
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star-off"></div>
+							</div>
+						</figcaption>
+					</figure>
+					<figure>
+						<div class="tiles-img bordering" id="home_4">
+							<img src="data/images/hebergements/4_small/home_4.jpg"
+							srcset="data/images/hebergements/4_small/home_4.jpg 500w,
+							data/images/hebergements/3_medium/home_4.jpg 1000w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							alt="hebergements Marseille"/>
+						</div>
+						<figcaption class="bordering">
+							<a href="#home"></a>
+							<p><span class="bold">Hôtel de la mer</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">46€</span></p>
+
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star-off"></div>
+								<div class="ico-star-off"></div>
+							</div>
+						</figcaption>
+					</figure>
+					<figure>
+						<div class="tiles-img bordering" id="home_5">
+							<img src="data/images/hebergements/4_small/home_5.jpg"
+							srcset="data/images/hebergements/4_small/home_5.jpg 652w,
+							data/images/hebergements/3_medium/home_5.jpg 1303w"
+							sizes="(min-width: 768px) 1000px, 333px"
+							alt="hebergements Marseille"/>
+						</div>
+						<figcaption class="bordering">
+							<a href="#home"></a>
+							<p><span class="bold">Auberge Le Panier</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">23€</span></p>
+
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star-off"></div>
+							</div>
+						</figcaption>
+					</figure>
+					<figure>
+						<div class="tiles-img bordering" id="home_6">
+							<img src="data/images/hebergements/4_small/home_6.jpg"
+							srcset="data/images/hebergements/4_small/home_6.jpg 486w,
+							data/images/hebergements/3_medium/home_6.jpg 972w"
+							sizes="(min-width: 768px) 1000px, 333px"
+
+							alt="hebergements Marseille"/>
+						</div>
+						<figcaption class="bordering">
+							<a href="#home"></a>
+							<p><span class="bold">Hôtel chez Amina</span></p>
+							<p class="price-tile">Nuit à partir de <span class="bold">96€</span></p>
+
+							<div class="stars bordering">
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+								<div class="ico-star"></div>
+							</div>
+						</figcaption>
 					</figure>
 				</div>
-				<p class="more"><a href="">Afficher plus</a></p>
+				<p class="more bordering bold"><a href="">Afficher plus</a></p>
 			</section>
 		</main>	
 
 		<section id="activities">
-			<h2>Activités à Marseille</h2>
+			<h2 class="bordering bold">Activités à Marseille</h2>
 			<div id="activities_tiles">
 				<figure id="activity_tile_1" class="tile">
-					<div class="tiles_img">
-						<img src="data/images/activites/4_small/activity_1.jpg" alt="Activités a Marseille">
-					</div>
-					<figcaption>Vieux Port</figcaption>
 					<a href="#activities"></a>
+					<div class="tiles-img bordering">
+						<img 
+						srcset="data/images/activites/4_small/activity_1.jpg 702w,
+						data/images/activites/3_medium/activity_1.jpg 1404w"
+						sizes="(min-width: 768px) 1000px, 333px"
+						src="data/images/activites/4_small/activity_1.jpg" alt="Activités a Marseille"/>
+					</div>
+					<figcaption class="bordering bold">Vieux Port</figcaption>
 				</figure>
 				<figure id="activity_tile_2" class="tile">
-					<div class="tiles_img">
-						<img src="data/images/activites/4_small/activity_2.jpg" alt="Activités a Marseille">
-					</div>
-					<figcaption>Fort de Pomègues</figcaption>
 					<a href="#activities"></a>
+					<div class="tiles-img bordering">
+						<img 
+						srcset="data/images/activites/4_small/activity_2.jpg 356w,
+						data/images/activites/3_medium/activity_2.jpg 711w"
+						sizes="(min-width: 768px) 1000px, 333px"
+						src="data/images/activites/4_small/activity_2.jpg" alt="Activités a Marseille"/>
+					</div>
+					<figcaption class="bordering bold">Fort de Pomègues</figcaption>
 				</figure>
 				<figure id="activity_tile_3" class="tile">
-					<div class="tiles_img">
-						<img src="data/images/activites/4_small/activity_3.jpg" alt="Activités a Marseille">
-					</div>
-					<figcaption>Îles du Frioul</figcaption>
 					<a href="#activities"></a>
+					<div class="tiles-img bordering">
+						<img 
+						srcset="data/images/activites/4_small/activity_3.jpg 648w,
+						data/images/activites/3_medium/activity_3.jpg 1296w"
+						sizes="(min-width: 768px) 1000px, 333px"
+						src="data/images/activites/4_small/activity_3.jpg" alt="Activités a Marseille"/>
+					</div>
+					<figcaption class="bordering bold">Îles du Frioul</figcaption>
 				</figure>
 				<figure id="activity_tile_4" class="tile">
-					<div class="tiles_img">
-						<img src="data/images/activites/4_small/activity_4.jpg" alt="Activités a Marseille">
-					</div>
-					<figcaption>Parc National des Calanques</figcaption>
 					<a href="#activities"></a>
+					<div class="tiles-img bordering">
+						<img 
+						srcset="data/images/activites/4_small/activity_4.jpg 606w,
+						data/images/activites/3_medium/activity_4.jpg 1212w"
+						sizes="(min-width: 768px) 1000px, 333px"
+						src="data/images/activites/4_small/activity_4.jpg" alt="Activités a Marseille"/>
+					</div>
+					<figcaption class="bordering bold">Parc National des Calanques</figcaption>
 				</figure>
 				<figure id="activity_tile_5" class="tile">
-					<div class="tiles_img">
-						<img src="data/images/activites/4_small/activity_5.jpg" alt="Activités a Marseille">
-					</div>
-					<figcaption>Notre-Dame-de-la-Garde</figcaption>
 					<a href="#activities"></a>
+					<div class="tiles-img bordering">
+						<img 
+						srcset="data/images/activites/4_small/activity_5.jpg 589w,
+						data/images/activites/3_medium/activity_5.jpg 1178w"
+						sizes="(min-width: 768px) 1000px, 333px"
+						src="data/images/activites/4_small/activity_5.jpg" alt="Activités a Marseille"/>
+					</div>
+					<figcaption class="bordering bold">Notre-Dame-de-la-Garde</figcaption>
 				</figure>
 				<figure id="activity_tile_6" class="tile">
-					<div class="tiles_img">
-						<img src="data/images/activites/4_small/activity_6.jpg" alt="Activités a Marseille">
-					</div>
-					<figcaption>Parc Longchamp</figcaption>
 					<a href="#activities"></a>
+					<div class="tiles-img bordering">
+						<img 
+						srcset="data/images/activites/4_small/activity_6.jpg 504w,
+						data/images/activites/3_medium/activity_6.jpg 1008w"
+						sizes="(min-width: 768px) 1000px, 333px"
+						src="data/images/activites/4_small/activity_6.jpg" alt="Activités a Marseille"/>
+					</div>
+					<figcaption class="bordering bold">Parc Longchamp</figcaption>
 				</figure>
 			</div>
 		</section>
 
 		
 
-		<footer>
+		<footer class="container">
 			<ul id="about">
 				<li>
-					<p><span>A propos</span></p>
+					<p><span class="bold">A propos</span></p>
 				</li>
 				<li><a href="">Fonctionnement du site</a></li>
 				<li><a href="">Conditions génèrales de vente</a></li>
@@ -335,7 +380,7 @@
 
 			<ul id="our_services">
 				<li>
-					<p><span>Nos hébergements</span></p>
+					<p><span class="bold">Nos hébergements</span></p>
 				</li>
 				<li><a href="">Charte qualité</a></li>
 				<li><a href="">Soumettre votre hôtel</a></li>
@@ -343,7 +388,7 @@
 
 			<ul id="get_help">
 				<li>
-					<p><span>Assistance</span></p>
+					<p><span class="bold">Assistance</span></p>
 				</li>
 				<li><a href="">Centre d'aide</a></li>
 				<li><a href="">Nous contacter</a></li>
