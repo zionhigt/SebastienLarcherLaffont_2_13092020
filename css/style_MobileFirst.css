@@ -89,7 +89,7 @@
 	url('../polices/raleway-variablefont_wght-webfont-regular.woff2')
 	format('woff2'),
 	url('../polices/raleway-variablefont_wght-webfont-regular.ttf')
-	format('truetype'),
+	format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -196,7 +196,7 @@ nav #subscribe
 nav #subscribe a 
 {
 	margin-right: 8%;
-	padding: auto 0;
+	padding: 0;
 	color: #0065fc;
 }
 
